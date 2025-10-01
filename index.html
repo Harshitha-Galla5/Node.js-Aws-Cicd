@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Node EB CI/CD Demo</title>
+</head>
+<body>
+  <h1>Node.js App deployed via CodePipeline → CodeBuild → Elastic Beanstalk</h1>
+  <p>Deployed at: <span id="time"></span></p>
+  <script>
+    document.getElementById('time').innerText = new Date().toLocaleString();
+  </script>
+</body>
+</html>
