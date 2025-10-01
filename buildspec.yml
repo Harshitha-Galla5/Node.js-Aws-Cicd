@@ -1,35 +1,20 @@
 version: 0.2
 
-env:
-  variables:
-    NODE_ENV: "production"
-    PORT: "8080"
-
 phases:
   install:
     runtime-versions:
-      nodejs: 20
+      nodejs: 18
     commands:
       - echo Installing dependencies...
       - npm install
 
-  pre_build:
-    commands:
-      - echo Pre-build phase started...
-
   build:
     commands:
-      - echo Build started...
-      - npm run build || echo "No build script found, skipping."
-
-  post_build:
-    commands:
-      - echo Build completed.
-      - echo Starting packaging...
-      - mkdir -p build
-      - cp -r * build/
+      - echo Build phase started...
+      - npm run build
 
 artifacts:
-  base-directory: build
   files:
     - '**/*'
+
+
