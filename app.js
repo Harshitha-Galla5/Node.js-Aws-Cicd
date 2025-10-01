@@ -1,12 +1,12 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const port = process.env.PORT || 8080;
 
-app.use(express.static('public'));
+const PORT = process.env.PORT || 8080;
 
-app.get('/health', (req, res) => res.send('OK'));
-app.get('/', (req, res) => res.sendFile(__dirname + '/public/index.html'));
+app.get("/", (req, res) => {
+  res.send("Hello Elastic Beanstalk! Code is deployed successfully from the Aws codepipeline");
+});
 
-app.listen(port, () => {
-  console.log(`App listening on port ${port}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running at http://0.0.0.0:${PORT}/`);
 });

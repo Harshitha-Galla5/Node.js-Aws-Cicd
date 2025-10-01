@@ -1,4 +1,4 @@
 node_modules/
-.idea/
-.vscode/
-*.zip
+npm-debug.log
+.env
+
