@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - echo Installing NPM dependencies...
+      - npm ci
+  build:
+    commands:
+      - echo Build stage - nothing special for this app
+      - npm run build || true
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: no
